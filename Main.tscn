@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = -73.0
+margin_right = 90.0
+margin_bottom = 73.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DFS" type="Button" parent="VBoxContainer"]
+margin_right = 180.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Depth First Search"
+
+[node name="BFSMinPath" type="Button" parent="VBoxContainer"]
+margin_top = 50.0
+margin_right = 180.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Breadth First Search"
+
+[node name="Wavefront" type="Button" parent="VBoxContainer"]
+margin_top = 100.0
+margin_right = 180.0
+margin_bottom = 146.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Wavefront"
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -284.0
+margin_top = -161.0
+margin_right = 292.0
+margin_bottom = -88.0
+text = "When you click to load a certain level, you will then use Right Mouse Button to place down a 'target' point, and Left Mouse Button to initiate the search through the graph from that location. Enjoy!"
+autowrap = true
+
+[node name="Level" type="Node2D" parent="."]
+
+[connection signal="pressed" from="VBoxContainer/DFS" to="." method="_on_DFS_pressed"]
+[connection signal="pressed" from="VBoxContainer/BFSMinPath" to="." method="_on_BFSMinPath_pressed"]
+[connection signal="pressed" from="VBoxContainer/Wavefront" to="." method="_on_Wavefront1_pressed"]
